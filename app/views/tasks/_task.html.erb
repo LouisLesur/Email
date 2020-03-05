@@ -1,0 +1,6 @@
+<li>
+  <%= task.title %>,"Deadline : " <%=  task.deadline.strftime("%D")  %>
+  <%= button_to task_path(task), method:"delete", remote: true  do%>
+    <i class="fas fa-trash-alt"></i>
+  <% end %>
+</li>

@@ -1,0 +1,23 @@
+<div class="vw-100 vh-100  bg-light row">
+
+  <div class="ml-5 mh-100 " style="width: 500px">
+    <%= link_to "recevoir un mail", emails_path, method:"post", class: "btn btn-primary w-100 mb-3", remote: true %>
+
+    <ul class="list-group" id="email-list">
+      <% @email.each do  |email|%>
+
+      <li class="list-group-item mb-3" id="<%= email.id %>">
+        <div class="h-10 w-100">
+          <%= link_to email_path(email.id), remote: true do %>
+            <%= email.object %>
+          <% end %>
+        <div>
+      </li>
+
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="mh-100 mw-100 ml-5 mr-3" id="email-plateform">
+  </div>
+</div>
